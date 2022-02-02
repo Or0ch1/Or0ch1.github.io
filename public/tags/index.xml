@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on  Bryan Theuri </title>
-    <link>/tags/</link>
+    <link>https://or0ch1.netlify.app/tags/</link>
     <description>Recent content in Tags on  Bryan Theuri </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 02 Feb 2022 08:56:51 +0300</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Feb 2022 08:56:51 +0300</lastBuildDate><atom:link href="https://or0ch1.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CTF</title>
-      <link>/tags/ctf/</link>
+      <link>https://or0ch1.netlify.app/tags/ctf/</link>
       <pubDate>Wed, 02 Feb 2022 08:56:51 +0300</pubDate>
       
-      <guid>/tags/ctf/</guid>
+      <guid>https://or0ch1.netlify.app/tags/ctf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Forensics</title>
-      <link>/tags/forensics/</link>
+      <link>https://or0ch1.netlify.app/tags/forensics/</link>
       <pubDate>Wed, 02 Feb 2022 08:56:51 +0300</pubDate>
       
-      <guid>/tags/forensics/</guid>
+      <guid>https://or0ch1.netlify.app/tags/forensics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>/tags/python/</link>
+      <link>https://or0ch1.netlify.app/tags/python/</link>
       <pubDate>Wed, 02 Feb 2022 08:56:51 +0300</pubDate>
       
-      <guid>/tags/python/</guid>
+      <guid>https://or0ch1.netlify.app/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Steganogrphy</title>
-      <link>/tags/steganogrphy/</link>
+      <link>https://or0ch1.netlify.app/tags/steganogrphy/</link>
       <pubDate>Wed, 02 Feb 2022 08:56:51 +0300</pubDate>
       
-      <guid>/tags/steganogrphy/</guid>
+      <guid>https://or0ch1.netlify.app/tags/steganogrphy/</guid>
       <description></description>
     </item>
     

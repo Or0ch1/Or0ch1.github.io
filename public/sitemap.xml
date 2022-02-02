@@ -2,36 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>https://or0ch1.netlify.app/</loc>
     <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://or0ch1.netlify.app/categories/</loc>
     <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
-    <loc>/tags/ctf/</loc>
+    <loc>https://or0ch1.netlify.app/tags/ctf/</loc>
     <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
-    <loc>/categories/ctf/</loc>
+    <loc>https://or0ch1.netlify.app/categories/ctf/</loc>
     <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
-    <loc>/tags/forensics/</loc>
+    <loc>https://or0ch1.netlify.app/tags/forensics/</loc>
     <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
-    <loc>/posts/writeups/knightctf2022/</loc>
+    <loc>https://or0ch1.netlify.app/posts/knightctf2022/</loc>
     <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>https://or0ch1.netlify.app/posts/</loc>
     <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
-    <loc>/tags/python/</loc>
+    <loc>https://or0ch1.netlify.app/tags/python/</loc>
     <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
-    <loc>/tags/steganogrphy/</loc>
+    <loc>https://or0ch1.netlify.app/tags/steganogrphy/</loc>
     <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://or0ch1.netlify.app/tags/</loc>
     <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
-    <loc>/series/</loc>
+    <loc>https://or0ch1.netlify.app/series/</loc>
   </url>
 </urlset>
