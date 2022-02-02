@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title> Bryan Theuri </title>
-    <link>/</link>
-    <description>Recent content on  Bryan Theuri </description>
+    <title>Python on  Bryan Theuri </title>
+    <link>/tags/python/</link>
+    <description>Recent content in Python on  Bryan Theuri </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 02 Feb 2022 08:56:51 +0300</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Feb 2022 08:56:51 +0300</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Knight CTF 2022</title>
       <link>/posts/writeups/knightctf2022/</link>

@@ -1,7 +1,14 @@
 ---
+author:
+  name: "Or0ch1"
+linktitle: Knight CTF 2022
 title: "Knight CTF 2022"
+categories: ["CTF"]
+tags: ['CTF', 'Forensics', 'Steganogrphy', 'Python']
+type:
+- post
+- posts
 date: 2022-02-02T08:56:51+03:00
-draft: true
 ---
 ![Logo]({{<static "knightctf/knight_ctf_logo.png">}})
 

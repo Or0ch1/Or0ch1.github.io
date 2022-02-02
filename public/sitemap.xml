@@ -3,11 +3,35 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
+    <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
+    <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
-    <loc>/series/</loc>
+    <loc>/tags/ctf/</loc>
+    <lastmod>2022-02-02T08:56:51+03:00</lastmod>
+  </url><url>
+    <loc>/categories/ctf/</loc>
+    <lastmod>2022-02-02T08:56:51+03:00</lastmod>
+  </url><url>
+    <loc>/tags/forensics/</loc>
+    <lastmod>2022-02-02T08:56:51+03:00</lastmod>
+  </url><url>
+    <loc>/posts/writeups/knightctf2022/</loc>
+    <lastmod>2022-02-02T08:56:51+03:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2022-02-02T08:56:51+03:00</lastmod>
+  </url><url>
+    <loc>/tags/python/</loc>
+    <lastmod>2022-02-02T08:56:51+03:00</lastmod>
+  </url><url>
+    <loc>/tags/steganogrphy/</loc>
+    <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
+    <lastmod>2022-02-02T08:56:51+03:00</lastmod>
+  </url><url>
+    <loc>/series/</loc>
   </url>
 </urlset>
