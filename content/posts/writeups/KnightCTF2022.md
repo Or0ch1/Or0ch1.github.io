@@ -10,7 +10,7 @@ type:
 - posts
 date: 2022-02-02T08:56:51+03:00
 ---
-![Logo](static/knightctf/knight_ctf_logo.png)
+![Logo](/static/knightctf/knight_ctf_logo.png)
 
 This was one of the CTFs that started off the year and it was an online jeopardy style Capture the Flag (CTF) competition hosted by the Knight Squad community from Bangladesh.
 
