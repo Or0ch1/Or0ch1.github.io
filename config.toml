@@ -197,12 +197,12 @@ disableHugoGeneratorInject = false
   [[menu.main]]
     identifier = "about"
     name       = "About Me"
-    url        = "about/"
+    url        = "/about/_index/"
   [[menu.main]]
     identifier = "CTF"
     name       = "CTF Writeups"
-    url        = "/writeups/CTF/"
+    url        = "/writeups/_index/"
   [[menu.main]]
     identifier = "blog"
     name       = "Blog"
-    url        = "/blog/blog/"
+    url        = "/blog/_index"
