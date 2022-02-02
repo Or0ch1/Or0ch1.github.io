@@ -33,9 +33,7 @@ disable404     = false
 disableHugoGeneratorInject = false
 
 [permalinks]
-  writeups = "/posts/:year/:month/:title/"
-  blog     = "/posts/:year/:month/:title/"
-  '/'      = "/posts/:year/:month/:title/"
+  #'/'      = "/posts/:year/:month/:title/"
 
 [author]
   name = "Or0ch1"
