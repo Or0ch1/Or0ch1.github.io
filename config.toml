@@ -1,6 +1,6 @@
 
   
-baseURL = "/"
+baseURL = ""
 title   = " Bryan Theuri "
 languageCode = "en-us"
 theme = "hugo-theme-hello-friend-ng"
