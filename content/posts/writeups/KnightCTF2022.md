@@ -10,7 +10,7 @@ type:
 - posts
 date: 2022-02-02T08:56:51+03:00
 ---
-![Logo](/static/knightctf/knight_ctf_logo.png)
+![Logo]({{<static "knightctf/knight_ctf_logo.png">}})
 
 This was one of the CTFs that started off the year and it was an online jeopardy style Capture the Flag (CTF) competition hosted by the Knight Squad community from Bangladesh.
 
@@ -18,7 +18,7 @@ The CTF started on 20 January 2022 09:00PM GMT +6 and ended on 21 January 2022 1
 
 I participated under team [@Fr334aks-mini](https://twitter.com/fr334aksmini) and we managed pos 120 out of 752 teams with 2750 points.
 
-![Team_Position]({{<static "knightctf/position.png">}})
+![Team_Position]({{<static "/knightctf/position.png">}})
 
 I focused primarily on the forensic and steganography categories and managed to solve 4 challenges,2 from each category.
 
