@@ -1,5 +1,3 @@
-
-  
 baseURL = ""
 title   = " Bryan Theuri "
 languageCode = "en-us"
@@ -36,9 +34,9 @@ disable404     = false
 disableHugoGeneratorInject = false
 
 [permalinks]
-  writeups/ = "/posts/:year/:month/:title/"
-  blog/ = "/posts/:year/:month/:title/"
-  '/' = "/posts/:year/:month/:title/"
+  writeups = "/posts/:year/:month/:title/"
+  blog     = "/posts/:year/:month/:title/"
+  '/'      = "/posts/:year/:month/:title/"
 
 [author]
   name = "Or0ch1"
