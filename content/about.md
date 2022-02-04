@@ -1,4 +1,6 @@
 ---
+name: "Or0ch1"
+linktitle: "About Me" 
 title: "About"
 date: 2022-02-02T08:57:18+03:00
 draft: true

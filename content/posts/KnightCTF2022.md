@@ -1,6 +1,6 @@
 ---
 name: "Or0ch1"
-linktitle: Knight CTF 2022
+linktitle: "Knight CTF 2022"
 title: "Knight CTF 2022"
 Cover: "/knightctf/knight_ctf_logo.png"
 categories: ["CTF"]
