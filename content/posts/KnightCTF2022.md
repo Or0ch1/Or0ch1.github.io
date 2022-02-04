@@ -4,6 +4,7 @@ linktitle: Knight CTF 2022
 title: "Knight CTF 2022"
 Cover: "/knightctf/knight_ctf_logo.png"
 categories: ["CTF"]
+toc: true
 tags: ['CTF', 'Forensics', 'Steganogrphy', 'Python']
 type:
 - post
