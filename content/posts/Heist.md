@@ -11,7 +11,7 @@ date: 2022-09-16T20:17:27+03:00
 
 ---
 
-This is will be my dive into writeups on boxes from Hack The Box.
+This will be my dive into writeups on boxes from Hack The Box.
 
 Heist is a retired windows box which has been rated easy and is part of the **intro to dante** Track.
 Lets jump right in!
