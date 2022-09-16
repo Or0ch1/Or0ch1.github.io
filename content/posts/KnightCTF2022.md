@@ -131,4 +131,4 @@ The text gotten was shifted using ROT13 and it was also reversed so i used this 
 
 I really hope you enjoyed the read, as im sure most can tell this is my first time writing a writeup :joy: but i hope to get better with time.
 
-Happy hacking everyone :sunglasses: and as we say at f334aks #IWDWD :skull:
+Happy hacking everyone :sunglasses: and as we say at f334aks-mini #IWDWD :skull:

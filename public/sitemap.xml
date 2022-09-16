@@ -3,10 +3,40 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://or0ch1.tech/</loc>
-    <lastmod>2022-02-02T08:56:51+03:00</lastmod>
+    <lastmod>2022-09-16T20:17:27+03:00</lastmod>
   </url><url>
     <loc>https://or0ch1.tech/categories/</loc>
-    <lastmod>2022-02-02T08:56:51+03:00</lastmod>
+    <lastmod>2022-09-16T20:17:27+03:00</lastmod>
+  </url><url>
+    <loc>https://or0ch1.tech/tags/evil-winrm/</loc>
+    <lastmod>2022-09-16T20:17:27+03:00</lastmod>
+  </url><url>
+    <loc>https://or0ch1.tech/categories/hackthebox/</loc>
+    <lastmod>2022-09-16T20:17:27+03:00</lastmod>
+  </url><url>
+    <loc>https://or0ch1.tech/tags/hackthebox/</loc>
+    <lastmod>2022-09-16T20:17:27+03:00</lastmod>
+  </url><url>
+    <loc>https://or0ch1.tech/posts/heist/</loc>
+    <lastmod>2022-09-16T20:17:27+03:00</lastmod>
+  </url><url>
+    <loc>https://or0ch1.tech/tags/impacket/</loc>
+    <lastmod>2022-09-16T20:17:27+03:00</lastmod>
+  </url><url>
+    <loc>https://or0ch1.tech/tags/john-the-ripper/</loc>
+    <lastmod>2022-09-16T20:17:27+03:00</lastmod>
+  </url><url>
+    <loc>https://or0ch1.tech/posts/</loc>
+    <lastmod>2022-09-16T20:17:27+03:00</lastmod>
+  </url><url>
+    <loc>https://or0ch1.tech/tags/</loc>
+    <lastmod>2022-09-16T20:17:27+03:00</lastmod>
+  </url><url>
+    <loc>https://or0ch1.tech/tags/windows/</loc>
+    <lastmod>2022-09-16T20:17:27+03:00</lastmod>
+  </url><url>
+    <loc>https://or0ch1.tech/about/</loc>
+    <lastmod>2022-02-02T08:57:18+03:00</lastmod>
   </url><url>
     <loc>https://or0ch1.tech/tags/ctf/</loc>
     <lastmod>2022-02-02T08:56:51+03:00</lastmod>
@@ -20,16 +50,10 @@
     <loc>https://or0ch1.tech/posts/knightctf2022/</loc>
     <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
-    <loc>https://or0ch1.tech/posts/</loc>
-    <lastmod>2022-02-02T08:56:51+03:00</lastmod>
-  </url><url>
     <loc>https://or0ch1.tech/tags/python/</loc>
     <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
     <loc>https://or0ch1.tech/tags/steganogrphy/</loc>
-    <lastmod>2022-02-02T08:56:51+03:00</lastmod>
-  </url><url>
-    <loc>https://or0ch1.tech/tags/</loc>
     <lastmod>2022-02-02T08:56:51+03:00</lastmod>
   </url><url>
     <loc>https://or0ch1.tech/series/</loc>
