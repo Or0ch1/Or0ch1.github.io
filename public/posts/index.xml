@@ -15,16 +15,18 @@
             <pubDate>Fri, 16 Sep 2022 20:17:27 +0300</pubDate>
             
             <guid>https://or0ch1.tech/posts/heist/</guid>
-            <description>This is will my dive into writeups on boxes from Hack The Box.
+            <description>This is will be my dive into writeups on boxes from Hack The Box.
 Heist is a windows box which has been rated easy and is part of the intro to dante Track. Lets jump right in!
 Recon After starting the box we get the ip as 10.10.10.149 and as always we start with nmap to scan for open ports and services running on them.
-Web Enumeration Navigating to 10.10.10.149:80 we get a login page.</description>
-            <content type="html"><![CDATA[<p>This is will my dive into writeups on boxes from Hack The Box.</p>
+I ran into a few problems with Nmap so i rescanned the machine with rustscan which got me all the open ports.</description>
+            <content type="html"><![CDATA[<p>This is will be my dive into writeups on boxes from Hack The Box.</p>
 <p>Heist is a windows box which has been rated easy and is part of the <strong>intro to dante</strong> Track.
 Lets jump right in!</p>
 <h2 id="recon">Recon</h2>
 <p>After starting the box we get the ip as <strong>10.10.10.149</strong> and as always we start with nmap to scan for open ports and services running on them.</p>
 <p><img src="https://or0ch1.tech/heist/nmapscan.png" alt="Nmap_results"></p>
+<p>I ran into a few problems with Nmap so i rescanned the machine with rustscan which got me all the open ports.</p>
+<p><img src="https://or0ch1.tech/heist/rustscan.png" alt="rustscan"></p>
 <h2 id="web-enumeration">Web Enumeration</h2>
 <p>Navigating to <strong>10.10.10.149:80</strong> we get a login page.</p>
 <p><img src="https://or0ch1.tech/heist/port80.png" alt="Login"></p>

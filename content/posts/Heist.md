@@ -11,7 +11,7 @@ date: 2022-09-16T20:17:27+03:00
 
 ---
 
-This is will my dive into writeups on boxes from Hack The Box.
+This is will be my dive into writeups on boxes from Hack The Box.
 
 Heist is a windows box which has been rated easy and is part of the **intro to dante** Track.
 Lets jump right in!
@@ -21,6 +21,9 @@ After starting the box we get the ip as **10.10.10.149** and as always we start 
 
 ![Nmap_results]({{<static "/heist/nmapscan.png">}})
 
+I ran into a few problems with Nmap so i rescanned the machine with rustscan which got me all the open ports.
+
+![rustscan]({{<static "/heist/rustscan.png">}})
 
 ## Web Enumeration
 
