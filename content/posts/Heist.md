@@ -21,7 +21,7 @@ After starting the box we get the ip as **10.10.10.149** and as always we start 
 
 ![Nmap_results]({{<static "/heist/nmapscan.png">}})
 
-I ran into a few problems with Nmap so i rescanned the machine with rustscan which got me all the open ports.
+I ran into a few problems with Nmap so I rescanned the machine with rustscan which got me all the open ports.
 
 ![rustscan]({{<static "/heist/rustscan.png">}})
 
@@ -31,7 +31,7 @@ Navigating to **10.10.10.149:80** we get a login page.
 
 ![Login]({{<static "/heist/port80.png">}})
 
-Trying to login prompts us to enter an email address,i decide to try and log in as guest and we get something interesting.
+Trying to login prompts us to enter an email address,I decide to try and log in as guest and we get something interesting.
 
 Instead of a login or registration page we're redirected to a support page containing a thread about someone named **Hazard** who has attached part of a cisco config file.
 
@@ -45,28 +45,28 @@ I use John the Ripper with the format set to **md5crypt** to crack the Type 5 pa
 
 ![type5]({{<static "/heist/password5crack.png">}})
 
-For the type 7 password hashes i use a custom perl script to decrypt them.
+For the type 7 password hashes I use a custom perl script to decrypt them.
 
 ![type7]({{<static "/heist/password7crack.png">}})
 
 
 ## Smb Enumeration
 
-In the support thread **Hazard** asked the support admin to create an account for him on the server, so using the decrypted credentials i try to access the shares.
+In the support thread **Hazard** asked the support admin to create an account for him on the server, so using the decrypted credentials I try to access the shares.
 
 Using **Hazard: stealth1agent** we are able to authenticate however, we are only able to list the shares and we can neither mount or access them.
 
 ![smb_shares]({{<static "/heist/smbshares.png">}})
 
-Since we have rpc on the windows box i enumerate other users using impackets' **lookupsid**.
+Since we have rpc on the windows box I enumerate other users using impackets' **lookupsid**.
 
 ![enum_users]({{<static "/heist/enum_users.png">}})
 
 ## Winrm enumeration
 
-Since we also have winrm,using evil-winrm i try and see which user and credential work, after a few tries im able to authenticate as **chase : Q4)sJu\Y8qz*A3?d** .
+Since we also have winrm,using evil-winrm I try and see which user and credential work, after a few tries im able to authenticate as **chase : Q4)sJu\Y8qz*A3?d** .
 
-Poking around i see two interesting files in the Desktop directory **todo.txt** and **user.txt**.
+Poking around I see two interesting files in the Desktop directory **todo.txt** and **user.txt**.
 
 **todo.txt** contains some hints which we will use later.
 
@@ -78,9 +78,9 @@ Poking around i see two interesting files in the Desktop directory **todo.txt** 
 
 Moving back to the **todo.txt** file we can see some list of things to do some of which are already done and some which aren't.
 
-We can see Chase needs to keep checking the issues list and supposed to fix a route config hence i come to the conclusion he is the support admin.
+We can see Chase needs to keep checking the issues list and supposed to fix a route config hence I come to the conclusion he is the support admin.
 
-He will be monitoring the issues list website via browser so i decide to check the processes running and i see firefox.
+He will be monitoring the issues list website via browser so I decide to check the processes running and I see firefox.
 
 ![firefox_process]({{<static "/heist/firefox_process.png">}})
 
@@ -90,7 +90,7 @@ I upload both procdump64.exe and strings64.exe from the sysinternals suite to th
 
 ![strings]({{<static "/heist/upload_strings.png">}})
 
-Using procdump.exe i dump one of the firefox processes and extract strings from it to another file using strings64.exe.
+Using procdump.exe I dump one of the firefox processes and extract strings from it to another file using strings64.exe.
 
 ![dump_firefox]({{<static "/heist/dump_firefox.png">}})
 
