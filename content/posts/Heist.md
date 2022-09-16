@@ -21,7 +21,6 @@ After starting the box we get the ip as **10.10.10.149** and as always we start 
 
 ![Nmap_results]({{<static "/heist/nmapscan.png">}})
 
-We've got smb,a web server runing IIS and winrm running.
 
 ## Web Enumeration
 
@@ -29,7 +28,7 @@ Navigating to **10.10.10.149:80** we get a login page.
 
 ![Login]({{<static "/heist/port80.png">}})
 
-Tying to login prompts us to enter an email address,i decide to try and log in as guest and we get something interesting.
+Trying to login prompts us to enter an email address,i decide to try and log in as guest and we get something interesting.
 
 Instead of a login or registration page we're redirected to a support page containing a thread about someone named **Hazard** who has attached part of a cisco config file.
 
@@ -56,13 +55,13 @@ Using **Hazard: stealth1agent** we are able to authenticate however, we are only
 
 ![smb_shares]({{<static "/heist/smbshares.png">}})
 
-Since we have rpc on the windows box i enumerate other users using impackets **lookupsid**.
+Since we have rpc on the windows box i enumerate other users using impackets' **lookupsid**.
 
 ![enum_users]({{<static "/heist/enum_users.png">}})
 
 ## Winrm enumeration
 
-Since we also have winrm,using evil-winrm i try and see which user and credentials work, after a few tries im able to authenticate as **chase : Q4)sJu\Y8qz*A3?d** .
+Since we also have winrm,using evil-winrm i try and see which user and credential work, after a few tries im able to authenticate as **chase : Q4)sJu\Y8qz*A3?d** .
 
 Poking around i see two interesting files in the Desktop directory **todo.txt** and **user.txt**.
 
@@ -78,7 +77,7 @@ Moving back to the **todo.txt** file we can see some list of things to do some o
 
 We can see Chase needs to keep checking the issues list and supposed to fix a route config hence i come to the conclusion he is the support admin.
 
-He will be monitoring the issues list website via browser so i decide to check the processes running and see firefox.
+He will be monitoring the issues list website via browser so i decide to check the processes running and i see firefox.
 
 ![firefox_process]({{<static "/heist/firefox_process.png">}})
 
@@ -88,7 +87,7 @@ I upload both procdump64.exe and strings64.exe from the sysinternals suite to th
 
 ![strings]({{<static "/heist/upload_strings.png">}})
 
-Using procdump.exe i dump a firefox process and extract strings from it to another file using strings64.exe.
+Using procdump.exe i dump one of the firefox processes and extract strings from it to another file using strings64.exe.
 
 ![dump_firefox]({{<static "/heist/dump_firefox.png">}})
 
