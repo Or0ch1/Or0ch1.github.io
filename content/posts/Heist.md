@@ -5,7 +5,7 @@ title: "Heist"
 Cover: "/heist/Heist.png"
 categories: ["HacktheBox"]
 toc: true
-images:
+images: 
 tags: ['HackTheBox', 'evil-winrm', 'impacket', 'windows', 'John The Ripper']
 date: 2022-09-16T20:17:27+03:00
 
@@ -14,10 +14,11 @@ date: 2022-09-16T20:17:27+03:00
 This will be my dive into writeups on boxes from Hack The Box.
 
 Heist is a retired windows box which has been rated easy and is part of the **intro to dante** Track.
+
 Lets jump right in!
 
 ## Recon
-After starting the box we get the ip as **10.10.10.149** and as always we start with nmap to scan for open ports and services running on them.
+After starting the box we get the ip as **10.10.10.149** and as always I start with nmap to scan for open ports and services running on them.
 
 ![Nmap_results]({{<static "/heist/nmapscan.png">}})
 
