@@ -2,22 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>impacket on Bryan Theuri </title>
-    <link>https://or0ch1.tech/tags/impacket/</link>
+    <link>https://Or0ch1.github.io/tags/impacket/</link>
     <description>Recent content in impacket on Bryan Theuri </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 16 Sep 2022 20:17:27 +0300</lastBuildDate><atom:link href="https://or0ch1.tech/tags/impacket/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Sep 2022 20:17:27 +0300</lastBuildDate><atom:link href="https://Or0ch1.github.io/tags/impacket/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Heist</title>
-      <link>https://or0ch1.tech/posts/heist/</link>
+      <link>https://Or0ch1.github.io/posts/heist/</link>
       <pubDate>Fri, 16 Sep 2022 20:17:27 +0300</pubDate>
       
-      <guid>https://or0ch1.tech/posts/heist/</guid>
-      <description>This is will be my dive into writeups on boxes from Hack The Box.
-Heist is a windows box which has been rated easy and is part of the intro to dante Track. Lets jump right in!
-Recon After starting the box we get the ip as 10.10.10.149 and as always we start with nmap to scan for open ports and services running on them.
-I ran into a few problems with Nmap so i rescanned the machine with rustscan which got me all the open ports.</description>
+      <guid>https://Or0ch1.github.io/posts/heist/</guid>
+      <description>This will be my dive into writeups on boxes from Hack The Box.
+Heist is a retired windows box which has been rated easy and is part of the intro to dante Track.
+Lets jump right in!
+Recon After starting the box we get the ip as 10.10.10.149 and as always I start with nmap to scan for open ports and services running on them.
+I ran into a few problems with Nmap so I rescanned the machine with rustscan which got me all the open ports.</description>
     </item>
     
   </channel>

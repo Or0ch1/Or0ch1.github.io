@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CTF on Bryan Theuri </title>
-    <link>https://or0ch1.tech/tags/ctf/</link>
+    <link>https://Or0ch1.github.io/tags/ctf/</link>
     <description>Recent content in CTF on Bryan Theuri </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 02 Feb 2022 08:56:51 +0300</lastBuildDate><atom:link href="https://or0ch1.tech/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Feb 2022 08:56:51 +0300</lastBuildDate><atom:link href="https://Or0ch1.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Knight CTF 2022</title>
-      <link>https://or0ch1.tech/posts/knightctf2022/</link>
+      <link>https://Or0ch1.github.io/posts/knightctf2022/</link>
       <pubDate>Wed, 02 Feb 2022 08:56:51 +0300</pubDate>
       
-      <guid>https://or0ch1.tech/posts/knightctf2022/</guid>
+      <guid>https://Or0ch1.github.io/posts/knightctf2022/</guid>
       <description>This was one of the CTFs that started off the year and it was an online jeopardy style Capture the Flag (CTF) competition hosted by the Knight Squad community from Bangladesh.
 The CTF started on 20 January 2022 09:00PM GMT +6 and ended on 21 January 2022 11:59PM GMT +6.
 I participated under team @Fr334aks-mini and we managed pos 120 out of 752 teams with 2750 points.

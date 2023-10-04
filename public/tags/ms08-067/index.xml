@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MS08-067 on Bryan Theuri </title>
+    <link>https://Or0ch1.github.io/tags/ms08-067/</link>
+    <description>Recent content in MS08-067 on Bryan Theuri </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 22 Sep 2022 16:35:24 +0300</lastBuildDate><atom:link href="https://Or0ch1.github.io/tags/ms08-067/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Legacy</title>
+      <link>https://Or0ch1.github.io/posts/legacy/</link>
+      <pubDate>Thu, 22 Sep 2022 16:35:24 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/posts/legacy/</guid>
+      <description>Welcome to another HackTheBox writeup, today we&amp;rsquo;ll be diving into the retired windows box Legacy.
+Lets jump right in!
+Recon Starting the box we get the ip 10.10.10.4 and we scan for open ports using nmap.
+The results show the OS as Windows XP and the following ports open:
+ 135 - msrpc 139 - netbios-ssn 445 - microsoft-ds  Enumeration I try Null authentication by using smbclient and smbmap but I wasn&amp;rsquo;t successful.</description>
+    </item>
+    
+  </channel>
+</rss>
