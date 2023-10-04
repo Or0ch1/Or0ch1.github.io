@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bryan Theuri </title>
+    <link>https://Or0ch1.github.io/</link>
+    <description>Recent content on Bryan Theuri </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 22 Sep 2022 16:35:24 +0300</lastBuildDate><atom:link href="https://Or0ch1.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Legacy</title>
+      <link>https://Or0ch1.github.io/posts/legacy/</link>
+      <pubDate>Thu, 22 Sep 2022 16:35:24 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/posts/legacy/</guid>
+      <description>Welcome to another HackTheBox writeup, today we&amp;rsquo;ll be diving into the retired windows box Legacy.
+Lets jump right in!
+Recon Starting the box we get the ip 10.10.10.4 and we scan for open ports using nmap.
+The results show the OS as Windows XP and the following ports open:
+ 135 - msrpc 139 - netbios-ssn 445 - microsoft-ds  Enumeration I try Null authentication by using smbclient and smbmap but I wasn&amp;rsquo;t successful.</description>
+    </item>
+    
+    <item>
+      <title>OpenAdmin</title>
+      <link>https://Or0ch1.github.io/posts/openadmin/</link>
+      <pubDate>Mon, 19 Sep 2022 08:48:53 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/posts/openadmin/</guid>
+      <description>Welcome to another Hack the Box writeup today we will be doing OpenAdmin.
+OpenAdmin is a retired Linux box which has been rated easy and is part of the intro to dante Track.
+Lets jump right in!
+Recon After starting the box we get the ip as 10.10.10.171 and as always I start with nmap to scan for open ports and services running on them.
+As we can see from the results we have two ports open, port 80 for HTTP and port 22 for ssh.</description>
+    </item>
+    
+    <item>
+      <title>Heist</title>
+      <link>https://Or0ch1.github.io/posts/heist/</link>
+      <pubDate>Fri, 16 Sep 2022 20:17:27 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/posts/heist/</guid>
+      <description>This will be my dive into writeups on boxes from Hack The Box.
+Heist is a retired windows box which has been rated easy and is part of the intro to dante Track.
+Lets jump right in!
+Recon After starting the box we get the ip as 10.10.10.149 and as always I start with nmap to scan for open ports and services running on them.
+I ran into a few problems with Nmap so I rescanned the machine with rustscan which got me all the open ports.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://Or0ch1.github.io/about/</link>
+      <pubDate>Wed, 02 Feb 2022 08:57:18 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/about/</guid>
+      <description>My name is Bryan Theuri alias Or0ch1 a member of @fr334aks-mini ctf team.
+I am a Cyber Security and Forensics Consultant at Cyber Security Africa.
+Currently explanding my skillset to Malware Analysis and Mobile Application Penetration Testing.</description>
+    </item>
+    
+    <item>
+      <title>Knight CTF 2022</title>
+      <link>https://Or0ch1.github.io/posts/knightctf2022/</link>
+      <pubDate>Wed, 02 Feb 2022 08:56:51 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/posts/knightctf2022/</guid>
+      <description>This was one of the CTFs that started off the year and it was an online jeopardy style Capture the Flag (CTF) competition hosted by the Knight Squad community from Bangladesh.
+The CTF started on 20 January 2022 09:00PM GMT +6 and ended on 21 January 2022 11:59PM GMT +6.
+I participated under team @Fr334aks-mini and we managed pos 120 out of 752 teams with 2750 points.
+I focused primarily on the forensic and steganography categories and managed to solve 4 challenges,2 from each category.</description>
+    </item>
+    
+  </channel>
+</rss>

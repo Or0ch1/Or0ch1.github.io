@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Bryan Theuri </title>
+    <link>https://Or0ch1.github.io/tags/linux/</link>
+    <description>Recent content in linux on Bryan Theuri </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 19 Sep 2022 08:48:53 +0300</lastBuildDate><atom:link href="https://Or0ch1.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenAdmin</title>
+      <link>https://Or0ch1.github.io/posts/openadmin/</link>
+      <pubDate>Mon, 19 Sep 2022 08:48:53 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/posts/openadmin/</guid>
+      <description>Welcome to another Hack the Box writeup today we will be doing OpenAdmin.
+OpenAdmin is a retired Linux box which has been rated easy and is part of the intro to dante Track.
+Lets jump right in!
+Recon After starting the box we get the ip as 10.10.10.171 and as always I start with nmap to scan for open ports and services running on them.
+As we can see from the results we have two ports open, port 80 for HTTP and port 22 for ssh.</description>
+    </item>
+    
+  </channel>
+</rss>

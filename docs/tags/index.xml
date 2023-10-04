@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Bryan Theuri </title>
+    <link>https://Or0ch1.github.io/tags/</link>
+    <description>Recent content in Tags on Bryan Theuri </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 22 Sep 2022 16:35:24 +0300</lastBuildDate><atom:link href="https://Or0ch1.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HackTheBox</title>
+      <link>https://Or0ch1.github.io/tags/hackthebox/</link>
+      <pubDate>Thu, 22 Sep 2022 16:35:24 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/tags/hackthebox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MS08-067</title>
+      <link>https://Or0ch1.github.io/tags/ms08-067/</link>
+      <pubDate>Thu, 22 Sep 2022 16:35:24 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/tags/ms08-067/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MS17-010</title>
+      <link>https://Or0ch1.github.io/tags/ms17-010/</link>
+      <pubDate>Thu, 22 Sep 2022 16:35:24 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/tags/ms17-010/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://Or0ch1.github.io/tags/windows/</link>
+      <pubDate>Thu, 22 Sep 2022 16:35:24 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://Or0ch1.github.io/tags/linux/</link>
+      <pubDate>Mon, 19 Sep 2022 08:48:53 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>evil-winrm</title>
+      <link>https://Or0ch1.github.io/tags/evil-winrm/</link>
+      <pubDate>Fri, 16 Sep 2022 20:17:27 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/tags/evil-winrm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>impacket</title>
+      <link>https://Or0ch1.github.io/tags/impacket/</link>
+      <pubDate>Fri, 16 Sep 2022 20:17:27 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/tags/impacket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>John The Ripper</title>
+      <link>https://Or0ch1.github.io/tags/john-the-ripper/</link>
+      <pubDate>Fri, 16 Sep 2022 20:17:27 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/tags/john-the-ripper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CTF</title>
+      <link>https://Or0ch1.github.io/tags/ctf/</link>
+      <pubDate>Wed, 02 Feb 2022 08:56:51 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/tags/ctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forensics</title>
+      <link>https://Or0ch1.github.io/tags/forensics/</link>
+      <pubDate>Wed, 02 Feb 2022 08:56:51 +0300</pubDate>
+      
+      <guid>https://Or0ch1.github.io/tags/forensics/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

